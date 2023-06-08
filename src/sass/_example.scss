@@ -1,28 +1,60 @@
-.example {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  line-height: 1.5;
-  background-color: #fff;
-  color: #2f2f37;
-  max-width: 960px;
-  padding: 16px;
+ul {
+  list-style: none;
+  padding: 0 !important;
 }
-
-.example code {
-  font-family: monospace;
-  font-size: 16px;
-  font-weight: 700;
-  background-color: #ff6b0a;
-  color: #fff;
-  padding: 2px 6px;
-  border-radius: 2px;
+.wrap {
+  background-color: purple;
 }
-
-.example .background {
-  height: 240px;
-  // ❗️❗️❗️ The path to images from a SASS file
-  // is always the same as from the css folder.
-  background-image: url('../images/logo.png');
-  background-size: cover;
-  background-position: center;
+.container-gallery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+.input-search {
+  width: 50% !important;
+  min-width: 220px;
+}
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  &__img {
+    height: 150px !important;
+  }
+  &__link {
+    text-decoration: none;
+    color: black;
+    pointer-events: none;
+  }
+}
+.list-statistics {
+  display: flex !important;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+.statistic {
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__p {
+    font-weight: 700;
+    font-size: 14px;
+  }
+  &__span {
+    font-size: 14px;
+  }
+}
+.card {
+  width: 300px !important;
+}
+.api-gallery {
+  padding: 20px;
 }
