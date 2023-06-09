@@ -3,7 +3,6 @@ import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { Report } from 'notiflix/build/notiflix-report-aio';
-
 // def variables
 const API_KEY = '36227558-9625164a7e143cb1d3fcc8b96';
 let URL = 'https://pixabay.com/api/?key=' + API_KEY + '&q=',
@@ -30,6 +29,7 @@ const functionApi = async dataSearch => {
     const data = await fetchApi.json();
     // clear listGallery (container`s hits)
     remove();
+    debugger;
     if (
       data.totalHits >= 1 &&
       per_page >= data.totalHits &&
@@ -73,7 +73,7 @@ const functionApi = async dataSearch => {
         ? Notify.success(`Hooray! We found ${data.totalHits} images.`)
         : null;
     }
-    if (listGallery.childNodes.length < 0) {
+    if (listGallery.childNodes.length <= 0) {
       Notify.failure(
         'Sorry, there are no images matching your search query. Please try again.',
         {
@@ -146,7 +146,7 @@ window.addEventListener('scroll', e => {
   scrolling = true;
   // console.log(e.currentTarget); aqui puedo ver opciones del window
   if (window.innerHeight + window.scrollY >= scrollBody.offsetHeight) {
-    per_page += 12;
+    per_page += 20;
     searchDataApi();
   }
 });
